@@ -82,11 +82,11 @@
                 </div>
                 <div class="col-lg-8 offset-lg-2" >
                     <div class="pricing-item-pro" style="position: relative;" >
-                        <h4>Amazon App</h4>
-                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/vhpC4m61w-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vhpC4m61w-o" allowfullscreen allow="autoplay"></iframe>
+                        <span class="price"><%=object.type%></span>
+                        <h4><%=object.name%></h4>
+                        <iframe width="560" height="315" src=<%=object.url%> allowfullscreen allow="autoplay"></iframe>
                         <div class="border-button">
-                            <a href="https://www.amazon.in/">Try it!</a>
+                            <a href=<%=object.try%>>Try it!</a>
                         </div>
                     </div>
                 </div>
