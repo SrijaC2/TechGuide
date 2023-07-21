@@ -11,6 +11,7 @@ app.set("view engine", "ejs");
 app.engine('ejs', require('ejs').__express);
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname + '/public'));
 
 // app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser("shh! some secret string"));
@@ -23,69 +24,17 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // const flash = require("connect-flash");
 app.set("views", path.join(__dirname, "views"));
-// app.use(flash());
-
-// const bcrypt = require("bcrypt");
-// const saltRounds = 10;
-
-// app.use(
-//   session({
-//     secret: "my-super-secret-key-21728172615261563",
-//     cookie: {
-//       maxAge: 24 * 60 * 60 * 1000,
-//     },
-//   })
-// );
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// app.use(function (request, response, next) {
-//   response.locals.messages = request.flash();
-//   next();
-// });
-
-// passport.use(
-//   new LocalStrategy(
-//     {
-//       usernameField: "email",
-//       passwordField: "password",
-//     },
-//     (username, password, done) => {
-//         Persons.findOne({ where: { email: username } })
-//         .then(async function (user) {
-//           const result = await bcrypt.compare(password, user.password);
-//           if (result) {
-//             return done(null, user);
-//           } else {
-//             return done(null, false, { message: "Invalid password" });
-//           }
-//         })
-//         .catch((error) => {
-//           return done(null, false, {
-//             message: "Your account doesn't exist, try signing up",
-//           });
-//         });
-//     }
-//   )
-// );
-
-// passport.serializeUser((user, done) => {
-//   console.log("Serializing user in session", user.id);
-//   done(null, user.id);
-// });
-
-// passport.deserializeUser((id, done) => {
-//     Persons.findByPk(id)
-//     .then((user) => {
-//       done(null, user);
-//     })
-//     .catch((error) => {
-//       done(error, null);
-//     });
-// });
-
 app.get("/", async (request, response) => {
   return response.render("index");
 });
+
+app.get("/typesOfApps", async (request, response) => {
+  return response.render("typesOfApps");
+});
+
+app.get("/video/:id", async (request, response) => {
+  return response.render("video");
+});
+
 
 module.exports = app;
