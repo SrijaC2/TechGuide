@@ -23,6 +23,14 @@
     <link rel="stylesheet" href="/assets/css/templatemo-chain-app-dev.css">
     <link rel="stylesheet" href="/assets/css/animated.css">
     <link rel="stylesheet" href="/assets/css/owl.css">
+    <style>
+        p,h5,label {
+            font-size: <%=fontSize%>
+        }
+        .border-button a {
+            font-size: <%=fontSize%>
+        }
+    </style>
 
 </head>
 
@@ -56,14 +64,14 @@
                         font-size: 48px;
                         color: #0099ff;
                         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
-               TechGuide
-            </span>
+                            TechGuide
+                        </span>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="/typesOfApps">Go Back</a></li>
-                            
+                            <li><a href="/category/<%=objects[0].type%>">Go Back</a></li>
+
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -86,14 +94,47 @@
                         <p>Learn how you can use it efficiently to get the best of it.</p>
                     </div>
                 </div>
-                <div class="col-lg-8 offset-lg-2" >
-                    <div class="pricing-item-pro" style="position: relative;" >
-                        <span class="price"><%=object.type%></span>
-                        <h4><%=object.name%></h4>
-                        <iframe width="560" height="315" src=<%=object.url%> allowfullscreen allow="autoplay"></iframe>
-                        <div class="border-button">
-                            <a href=<%=object.try%>>Try it!</a>
-                        </div>
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="pricing-item-pro" style="position: relative;">
+                        <%if (objects.length==1){%>
+                            <span class="price">
+                                <%=objects[0].type%>
+                            </span>
+                            <h3 class="mb-2">
+                                <%=objects[0].name%>
+                            </h3>
+                            <iframe width="560" height="315" src=<%=objects[0].url%> allowfullscreen
+                                allow="autoplay"></iframe>
+                            <div class="border-button">
+                                <a target="_blank" href=<%=objects[0].try%>>Try it!</a>
+                            </div>
+                            <%}else{%>
+                                <form action="/set-font-size/<%=objects[0].ID%>" method="post">
+                                    <div align="right" class="px-5 pb-4">
+                                        <label for="language" ><b>Select Language:</b></label>
+                                        <select id="language" name="language" onchange="this.form.submit()" >
+                                            <option value=""></option>
+                                            <option value="english">English</option>
+                                            <option value="telugu">Telugu</option>
+                                            <option value="hindi">Hindi</option>
+                                        </select>
+                                    </div>
+                                </form>
+                                <%const filteredItems = objects.filter(item => item.lang === selectedLanguage);%>
+                                <div id="language-content">
+                                    <span class="price">
+                                        <%=filteredItems[0].type%>
+                                    </span>
+                                    <h3 class="mb-2">
+                                        <%=filteredItems[0].name%>
+                                    </h3>
+                                    <iframe width="560" height="315" src=<%=filteredItems[0].url%> allowfullscreen allow="autoplay"></iframe>
+                                    <h5><%=selectedLanguage%> tutorial</h5>
+                                    <div class="border-button py-2">
+                                        <a target="_blank" href=<%=filteredItems[0].try%>>Try it!</a>
+                                    </div>
+                                </div>
+                            <%}%>
                     </div>
                 </div>
             </div>
@@ -110,6 +151,7 @@
     <script src="/assets/js/imagesloaded.js"></script>
     <script src="/assets/js/popup.js"></script>
     <script src="/assets/js/custom.js"></script>
+    
 </body>
 
 </html>

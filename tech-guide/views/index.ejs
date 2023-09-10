@@ -21,10 +21,49 @@
     <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+   
+    <style>
+      <style>
+  /* Style for the form container */
+  form {
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* Style for the label */
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  /* Style for the select dropdown */
+  select#fontSize {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #333;
+    width: 150px; /* Adjust the width as needed */
+  }
+
+  /* Style for the submit button (optional) */
+  input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+
+    </style>
 
   </head>
 
 <body>
+  <div >
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -59,7 +98,7 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <!-- <li class="scroll-to-section"><a href="#top" class="active">Home</a></li> -->
               <!-- <li class="scroll-to-section"><a href="/typesOfApps">Services</a></li> -->
               <li><div class="gradient-button"><a id="modal_trigger" href="/typesOfApps"><i class="fa fa-sign-in-alt"></i> Lets Get Started</a></div></li> 
             </ul>        
@@ -74,7 +113,8 @@
   </header>
 </div>
 
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" >
+    
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -82,13 +122,26 @@
             <div class="col-lg-6 align-self-center">
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
-                  <div class="col-lg-12">
+                  <div class="col-lg-12" class="app-container"  style="font-size: <%= fontSize %>;">
                     <h2>Get The Latest App Tricks and Tips</h2>
-                    <p>One place to learn all the trending applications in easier way</p>
+                    <p style="font-size: <%= fontSize %>;">One place to learn all the trending applications in easier way</p>
+                    <form action="/set-font-size" method="post">
+
+                      <label for="fontSize">Select Font Size:</label>
+                      <select id="fontSize" name="fontSize" onchange="this.form.submit()">
+                        <option value=""></option> 
+                          <option value="small">small</option> 
+                          <option value="medium">medium</option> 
+                          <option value="large">large</option>
+                          <option value="x-large">x-large</option>
+                          <option value="xx-large">xx-large</option>
+                      </select>
+                  </form>
                   </div>
                 </div>
               </div>
             </div>
+           
             <div class="col-lg-6">
               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                 <img src="assets/images/p.png" alt="">
@@ -102,6 +155,10 @@
 
 
 
+  </div>
+  
+  
+
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -110,5 +167,7 @@
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+
+  
 </body>
 </html>

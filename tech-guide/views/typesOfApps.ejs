@@ -21,7 +21,18 @@
     <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
-
+    <style>
+      .service-item p{
+        font-size: <%=fontSize%>
+      }
+      .text-button a {
+        font-size: <%=fontSize%>;
+      }
+      a {
+        font-size: <%=fontSize%>;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
 <body>
@@ -47,7 +58,7 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
            <a href="/" class="logo" style="padding-left: 50px;">
-              <img src="assets/images/user1.png" alt="Tech Guide Logo" height="100px">
+              <img src="assets/images/user1.png" alt="Tech Guide Logo" height="100px" class="h-24">
 
             </a>
             <span style="font-family: 'Helvetica', Arial, sans-serif;
@@ -59,7 +70,7 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="/" class="active" style="font-size: large;">Home</a></li>
               <li class="scroll-to-section"><a href="#services"></a></li>
             </ul>        
             <a class='menu-trigger'>
@@ -73,38 +84,74 @@
   </header>
 </div>
 
-  <div id="services" class="services section">
+  <div id="services" class="services section" style="font-size: <%= fontSize %>;">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" >
             <h4>Amazing <em>Services &amp; Features</em> for you</h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Discover the latest and greatest apps! Our application delivers detailed descriptions of all the trending apps, accompanied by captivating video and animated tutorials. Dive into a world of seamless learning and explore the functionalities of various apps at your own pace. 
+            <p style="font-size: <%= fontSize %>;">Discover the latest and greatest apps! Our application delivers detailed descriptions of all the trending apps, accompanied by captivating video and animated tutorials. Dive into a world of seamless learning and explore the functionalities of various apps at your own pace. 
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-        <div class="row">
+
+   
+
+    
+
+    <div class="container" >
+      
+      <div class="row">
+        <div align="center">
           <div class="col-lg-3">
-            <div class="service-item first-service">
+            <h1 class="text-3xl font-semibold text-center mb-4" style="font-family: 'Roboto', sans-serif;">Select Category</h1>
+
+
+            <ul>
+              <li class="mt-2">
+                <a href="/category/Shop" class="block w-full px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-300">Shop</a>
+              </li>
+              <li class="mt-2">
+                <a href="/category/Food" class="block w-full px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-300">Food</a>
+              </li>
+              <li class="mt-2">
+                <a href="/category/Payment" class="block w-full px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-all duration-300">Payment</a>
+              </li>
+              <li class="mt-2">
+                <a href="/category/Travel" class="block w-full px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-all duration-300">Travel</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+   
+      
+      
+      
+      <!-- <div class="row">
+          <div class="col-lg-3">
+            
+            <div class="service-item first-service" style="font-size: <%= fontSize %>;">
+              
               <div class="icon"></div>
               <h4>Amazon Shopping</h4>
               <p>Explore Your One-Stop-Shop For All Your Requirements. Shop Online Today!</p>
               <div class="text-button">
-                <a href="https://www.aboutamazon.com/news/retail/best-amazon-shopping-tips">Get Description <i class="fa fa-arrow-right"></i></a></br>
+                <a href="https://www.aboutamazon.com/news/retail/best-amazon-shopping-tips" target="_blank" rel="noopener noreferrer">Get Description <i class="fa fa-arrow-right"></i></a></br>
                 <a href="/video/<%=0%>">Get Video tutorial <i class="fa fa-arrow-right"></i></a>
               </div>
             </div>
-          </div>
+          </div>  
+
           <div class="col-lg-3">
             <div class="service-item second-service">
               <div class="icon"></div>
               <h4>Swiggy Food Order</h4>
               <p>Order food online for home delivery. Experience fastest food delivery service with no minimum order & GPS tracking.</p>
               <div class="text-button">
-                <a href="https://cashkaro.com/blog/how-to-order-on-swiggy/102951">Get Description <i class="fa fa-arrow-right"></i></a></br>
+                <a href="https://cashkaro.com/blog/how-to-order-on-swiggy/102951" target="_blank" rel="noopener noreferrer">Get Description <i class="fa fa-arrow-right"></i></a></br>
                 <a href="/video/<%=1%>">Get Video tutorial <i class="fa fa-arrow-right"></i></a>
               </div>
             </div>
@@ -115,7 +162,7 @@
               <h4>Google Pay</h4>
               <p>Google Pay is a quick, easy, and secure way to pay online, in stores or send money to friends and family. Pay the Google way.</p>
               <div class="text-button">
-                <a href="https://www.wikihow.com/Pay-with-Google-Pay-Online">Get Description <i class="fa fa-arrow-right"></i></a></br>
+                <a href="https://www.wikihow.com/Pay-with-Google-Pay-Online" target="_blank" rel="noopener noreferrer">Get Description <i class="fa fa-arrow-right"></i></a></br>
                 <a href="/video/<%=2%>">Get Video tutorial <i class="fa fa-arrow-right"></i></a>
               </div>
             </div>
@@ -126,12 +173,12 @@
               <h4>Uber</h4>
               <p>Book an Uber ride using your web browser on your desktop or phone. Taxi is the newest way to get a ride with Uber. </p>
               <div class="text-button">
-                <a href="https://www.wikihow.com/Use-Uber">Get Description <i class="fa fa-arrow-right"></i></a></br>
+                <a href="https://www.wikihow.com/Use-Uber" target="_blank" rel="noopener noreferrer">Get Description <i class="fa fa-arrow-right"></i></a></br>
                 <a href="/video/<%=3%>">Get Video tutorial <i class="fa fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
-        </div>
+         </div>  -->
       </div>
 </div>
 

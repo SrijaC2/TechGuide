@@ -1051,34 +1051,58 @@ Services Style
 .first-service .icon {
   background-image: url(../images/service-icon-01.png);
 }
+.first-service2 .icon{
+  background-image: url(../images/service-icon-012.png);
+}
 
 .first-service:hover .icon {
   background-image: url(../images/service-icon-hover-01.png);
+}
+.first-service2:hover .icon {
+  background-image: url(../images/service-icon-hover-012.png);
 }
 
 .second-service .icon {
   background-image: url(../images/service-icon-02.png);
 }
+.second-service2 .icon {
+  background-image: url(../images/service-icon-022.png);
+}
 
 .second-service:hover .icon {
   background-image: url(../images/service-icon-hover-02.png);
+}
+.second-service2:hover .icon {
+  background-image: url(../images/service-icon-hover-022.png);
 }
 
 
 .third-service .icon {
   background-image: url(../images/service-icon-03.png);
 }
+.third-service2 .icon {
+  background-image: url(../images/service-icon-032.png);
+}
 
 .third-service:hover .icon {
   background-image: url(../images/service-icon-hover-03.png);
+}
+.third-service2:hover .icon {
+  background-image: url(../images/service-icon-hover-032.png);
 }
 
 .fourth-service .icon {
   background-image: url(../images/service-icon-04.png);
 }
+.fourth-service2 .icon {
+  background-image: url(../images/service-icon-042.png);
+}
 
 .fourth-service:hover .icon {
   background-image: url(../images/service-icon-hover-04.png);
+}
+.fourth-service2:hover .icon {
+  background-image: url(../images/service-icon-hover-042.png);
 }
 
 .service-item:hover {
